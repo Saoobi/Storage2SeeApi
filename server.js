@@ -2,8 +2,9 @@
 require("dotenv").config();
 
 const express = require("express"),
+  cors = require("cors"),
   app = express(),
-  port = process.env.PORT || 3000;
+  port = process.env.PORT || 3001;
 
 //To connect to database
 const mongoose = require("mongoose");
@@ -18,6 +19,7 @@ const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
 
+app.use(cors());
 //Let the server accept json
 app.use(express.json());
 

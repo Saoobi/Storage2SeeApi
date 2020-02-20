@@ -1,25 +1,29 @@
-GET http://localhost:3000/storageLinks
+GET http://localhost:3001/storageLinks
 
 ###
 
-GET http://localhost:3000/storageLinks/5de65067ec57cd47f8848327
+GET http://localhost:3001/storageLinks/5de65067ec57cd47f8848327
 
 ###
-POST http://localhost:3000/storageLinks
+
+GET http://localhost:3001/storageLinks/category/youtube
+
+###
+POST http://localhost:3001/storageLinks
 Content-Type: application/json
 
 {
     "categorie" : "youtube",
-    "urlToStore" : "https://www.youtube.com/watch?v=BKWrwPuCgco"
+    "urlToStore" : "BKWrwPuCgco"
 }
 
 ###
 
-DELETE http://localhost:3000/storageLinks/5de65067ec57cd47f8848327
+DELETE http://localhost:3001/storageLinks/5e4df3e15e351c0d6910b11c
 
 ###
 
-PATCH http://localhost:3000/storageLinks/5de6520c49fe1b1d6c8a1bd0
+PATCH http://localhost:3001/storageLinks/5de6520c49fe1b1d6c8a1bd0
 Content-Type: application/json
 
 {

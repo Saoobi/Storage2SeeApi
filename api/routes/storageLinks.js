@@ -17,6 +17,18 @@ router.get("/:id", getStorageLink, (req, res) => {
   res.json(res.storageLink);
 });
 
+//Get
+router.get("/category/:category", async (req, res) => {
+  try {
+    const storageLinks = await StorageLink.find({
+      categorie: req.params.category
+    });
+    res.json(storageLinks);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 //Create one
 router.post("/", async (req, res) => {
   const storageLink = new StorageLink({
